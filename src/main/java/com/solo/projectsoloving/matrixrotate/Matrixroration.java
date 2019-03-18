@@ -1,4 +1,4 @@
-package com.solo.projectsoloving.spiralarray.com.solo.projectsoloving.matrixrotate;
+package com.solo.projectsoloving.matrixrotate;
 
 import java.util.Objects;
 
@@ -13,11 +13,13 @@ public class Matrixroration {
             return  inputarray;
         int i =0;
         int j=0;
-        int temp = inputarray[0][0];
          boolean iscompleted=false;
+         int temp = inputarray[i][j];
         while (!iscompleted) {
             if(i<=numberofrows && j<= numbercofcolumns) {
-
+               temp = inputarray[i][j];
+               inputarray[i][++j] = temp;
+                System.out.println(inputarray[i][j]);
             }
           iscompleted = true;
 
@@ -31,6 +33,6 @@ public class Matrixroration {
     }
 
     public int[][] rotate(int[][] input) {
-        return compute(null);
+        return compute(input);
     }
 }

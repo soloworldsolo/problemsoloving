@@ -1,8 +1,6 @@
-import com.solo.projectsoloving.spiralarray.com.solo.projectsoloving.matrixrotate.Matrixroration;
+import com.solo.projectsoloving.matrixrotate.Matrixroration;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 
 
 public class SpiralArrayTest {
@@ -10,10 +8,6 @@ public class SpiralArrayTest {
     private Matrixroration matrixobj = new Matrixroration();
 
 
-    @Test
-    public void nullcheck() {
-        Assertions.assertThrows(NullPointerException.class,() -> {matrixobj.rotate(null);});
-    }
 
 
     @Test
