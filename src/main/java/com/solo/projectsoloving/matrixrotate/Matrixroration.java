@@ -15,23 +15,55 @@ public class Matrixroration {
         int j=0;
          boolean iscompleted=false;
          int temp = inputarray[i][j];
+         int cycldcompleted=0;
         while (!iscompleted) {
-            if(i<=numberofrows && j<= numbercofcolumns) {
-               temp = inputarray[i][j+1];
-               inputarray[i][j+1] = inputarray[i][j];
-                System.out.println("temp"+temp);
-                System.out.println("current element"+inputarray[i][j]);
+            while(i<numberofrows && j< numbercofcolumns) {
+              int innerttemp = inputarray[i][j+1];
+               inputarray[i][j+1] = temp;
+               temp = innerttemp;
+               ++j;
             }
-          iscompleted = true;
 
+            while (i<numbercofcolumns && j>= numbercofcolumns) {
+                int innerttemp = inputarray[i+1][j];
+                inputarray[i+1][j] = temp;
+                temp = innerttemp;
+                ++i;
+            }
+
+
+            while (i>=numbercofcolumns && j>cycldcompleted) {
+                int innertemp = inputarray[i][j-1];
+                inputarray[i][j-1] = temp;
+                temp = innertemp;
+                --j;
+            }
+
+            while (i>cycldcompleted && j<numbercofcolumns) {
+                int innertemp = inputarray[i-1][j];
+                inputarray[i-1][j] = temp;
+                temp = innertemp;
+                --i;
+            }
+
+            numberofrows -= 1;
+            numbercofcolumns -=1;
+
+          if(numberofrows<=0 && numbercofcolumns <=0)
+              iscompleted = true;
+
+          else {
+              i++;
+              j++;
+              temp = inputarray[i][j];
+              cycldcompleted++;
+          }
         }
 
-        return  inputarray;
+       return inputarray;
     }
 
-    private void swap(int i, int j) {
 
-    }
 
     public int[][] rotate(int[][] input) {
         return compute(input);
