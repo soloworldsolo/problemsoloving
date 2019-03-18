@@ -17,9 +17,10 @@ public class Matrixroration {
          int temp = inputarray[i][j];
         while (!iscompleted) {
             if(i<=numberofrows && j<= numbercofcolumns) {
-               temp = inputarray[i][j];
-               inputarray[i][++j] = temp;
-                System.out.println(inputarray[i][j]);
+               temp = inputarray[i][j+1];
+               inputarray[i][j+1] = inputarray[i][j];
+                System.out.println("temp"+temp);
+                System.out.println("current element"+inputarray[i][j]);
             }
           iscompleted = true;
 
