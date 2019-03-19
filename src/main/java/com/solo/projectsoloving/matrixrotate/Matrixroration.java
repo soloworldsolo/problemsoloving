@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Matrixroration {
 
+    private int temp;
 
     private int[][] compute(int[][] inputarray) {
         Objects.requireNonNull(inputarray,"input cannotbeempty");
@@ -14,35 +15,27 @@ public class Matrixroration {
         int i =0;
         int j=0;
          boolean iscompleted=false;
-         int temp = inputarray[i][j];
+          temp = inputarray[i][j];
          int cycldcompleted=0;
         while (!iscompleted) {
             while(i<numberofrows && j< numbercofcolumns) {
-              int innerttemp = inputarray[i][j+1];
-               inputarray[i][j+1] = temp;
-               temp = innerttemp;
+               swap(i,j+1,inputarray);
                ++j;
             }
 
             while (i<numbercofcolumns && j>= numbercofcolumns) {
-                int innerttemp = inputarray[i+1][j];
-                inputarray[i+1][j] = temp;
-                temp = innerttemp;
+                swap(i+1,j,inputarray);
                 ++i;
             }
 
 
             while (i>=numbercofcolumns && j>cycldcompleted) {
-                int innertemp = inputarray[i][j-1];
-                inputarray[i][j-1] = temp;
-                temp = innertemp;
+                swap(i,j-1,inputarray);
                 --j;
             }
 
             while (i>cycldcompleted && j<numbercofcolumns) {
-                int innertemp = inputarray[i-1][j];
-                inputarray[i-1][j] = temp;
-                temp = innertemp;
+                swap(i-1,j,inputarray);
                 --i;
             }
 
@@ -63,8 +56,12 @@ public class Matrixroration {
        return inputarray;
     }
 
-
-
+     public void swap(int i ,int j,int[][] input) {
+        int innertemp = input[i][j];
+        input[i][j] = temp;
+        temp = innertemp;
+     }
+    
     public int[][] rotate(int[][] input) {
         return compute(input);
     }

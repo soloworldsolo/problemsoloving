@@ -12,7 +12,7 @@ public class MatrixRotationTest {
 
     @Test
     public void twobytwolArraycheck() {
-        int[][] twotwo = {{1,2},{3,4}};
+        int[][] twotwo = {{1, 2}, {3, 4}};
 
         int[][] expected = {{3,1},{4,2}};
 

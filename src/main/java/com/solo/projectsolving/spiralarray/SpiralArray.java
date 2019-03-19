@@ -19,14 +19,14 @@ public class SpiralArray {
                 for(int i=rowindex;i<columwidth;++i)
                     System.out.print(a[rowindex][i]);
 
-                System.out.println("");
+                System.out.println();
 
 
                 rowindex++;
 
                 for(int i= rowindex;i<rowwidth;i++)
                     System.out.print(a[i][columwidth-1]);
-                System.out.println("");
+                System.out.println();
 
                 columwidth--;
 
@@ -35,7 +35,7 @@ public class SpiralArray {
                     System.out.print(a[columwidth][i]);
 
                 colindex++;
-                System.out.println("");
+                System.out.println();
 
                 for(int i=columwidth-rowindex;i>=rowindex;i--)
                     System.out.print(a[i][rowindex-1]);
