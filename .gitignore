@@ -6,11 +6,9 @@
 
 #iml
 
+.idea/
 *.iml
-
-#idea
-
- idea/
+*.iws
 
 # BlueJ files
 *.ctxt
