@@ -20,22 +20,27 @@ public class Matrixmultiplication {
         int resultrowindex = 0;
        int resultcolumnindex =0;
 
-       while(resultrowindex < result.length ) {
-           result[resultrowindex][resultcolumnindex] = compute(first,second,resultrowindex,resultcolumnindex);
+       while(resultrowindex < result.length) {
+           while (resultcolumnindex < result[0].length) {
+               result[resultrowindex][resultcolumnindex] = compute(first,second,resultrowindex,resultcolumnindex);
+               resultcolumnindex++;
+           }
+
            resultrowindex++;
+           resultcolumnindex=0;
        }
 
         return result;
     }
 
     private int compute(int[][] first, int[][] second, int resultrowindex, int resultcolumnindex) {
-        int result =0;
+        int res=0;
          int index =0;
          while (index<first.length)  {
-             result += first[resultrowindex][index] * second[index][resultcolumnindex];
+             res += first[resultrowindex][index] * second[index][resultcolumnindex];
              index++;
          }
 
-       return result;
+       return res;
     }
 }
