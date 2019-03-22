@@ -15,13 +15,13 @@ public class Matrixmultiplication {
         final int[][] first = Objects.requireNonNull (matrix1, "matrix1 should not be empty");
         final int[][] second = Objects.requireNonNull (matrix2,"matrix2 should not be empty");
 
-       int[][] result = new int[first.length][first[0].length];
+       int[][] result = new int[first.length][second[0].length];
 
         int resultrowindex = 0;
        int resultcolumnindex =0;
 
        while(resultrowindex < result.length) {
-           while (resultcolumnindex < result[0].length) {
+           while (resultcolumnindex < result[0].length&& resultcolumnindex < first.length) {
                result[resultrowindex][resultcolumnindex] = compute(first,second,resultrowindex,resultcolumnindex);
                resultcolumnindex++;
            }
@@ -33,10 +33,10 @@ public class Matrixmultiplication {
         return result;
     }
 
-    private int compute(int[][] first, int[][] second, int resultrowindex, int resultcolumnindex) {
+    private int compute(final int[][] first,final int[][] second,final int resultrowindex,final int resultcolumnindex) {
         int res=0;
          int index =0;
-         while (index<first.length)  {
+         while (index<first[resultrowindex].length )  {
              res += first[resultrowindex][index] * second[index][resultcolumnindex];
              index++;
          }

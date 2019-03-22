@@ -33,4 +33,18 @@ public class MatrixmultiplicationTest {
 
     }
 
+
+    @Test
+    public void twoByTwoCheckingnonsquare() {
+        int[][] input1 = {{1,2,3},
+                {4,5,6}};
+        int[][] input2 = {{7,8},{9,10},{11,12}};
+        int[][] expected = {{58,64},
+                {139,154}};
+        var result = matrixmultiplication.multiply (input1,input2);
+
+        Assertions.assertArrayEquals(expected,result);
+
+    }
+
 }
