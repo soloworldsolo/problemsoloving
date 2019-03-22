@@ -31,7 +31,7 @@ public class MatrixmultiplicationTest {
                 {139,154}};
         var result = matrixmultiplication.multiply (input1,input2);
 
-        Assertions.assertArrayEquals (expected,result);
+        Assertions.assertArrayEquals(expected,result);
 
     }
 

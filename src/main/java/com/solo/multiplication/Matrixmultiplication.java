@@ -1,11 +1,41 @@
 package com.solo.multiplication;
 
+import java.util.Objects;
 import java.util.function.BiFunction;
 
 public class Matrixmultiplication {
+   /*
+      multiples two matrix and returns the result
+      assumes both the matrix are of the same size
+      (i.e) square matrix
+      @param1 expects a  non empty two dimensional matrix , throws null pointer exception
+      @param2 expects a non empty two  dimensional matrix
+    */
+    public int[][] multiply(final int[][] matrix1,final int[][] matrix2) {
+        final int[][] first = Objects.requireNonNull (matrix1, "matrix1 should not be empty");
+        final int[][] second = Objects.requireNonNull (matrix2,"matrix2 should not be empty");
 
-    public int[][] multiply(int[][] matrix1, int[][] matrix2) {
+       int[][] result = new int[first.length][first[0].length];
 
-        return null;
+        int resultrowindex = 0;
+       int resultcolumnindex =0;
+
+       while(resultrowindex < result.length ) {
+           result[resultrowindex][resultcolumnindex] = compute(first,second,resultrowindex,resultcolumnindex);
+           resultrowindex++;
+       }
+
+        return result;
+    }
+
+    private int compute(int[][] first, int[][] second, int resultrowindex, int resultcolumnindex) {
+        int result =0;
+         int index =0;
+         while (index<first.length)  {
+             result += first[resultrowindex][index] * second[index][resultcolumnindex];
+             index++;
+         }
+
+       return result;
     }
 }
