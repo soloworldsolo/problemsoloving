@@ -29,7 +29,7 @@ public class MatrixmultiplicationTest {
                 {19,26,21},{20,30,16}};
         var result = matrixmultiplication.multiply (input1,input2);
 
-        Assertions.assertArrayEquals (expected,result);
+        Assertions.assertArrayEquals (expected,result,"computed result must be equal");
 
     }
 
@@ -43,7 +43,7 @@ public class MatrixmultiplicationTest {
                 {139,154}};
         var result = matrixmultiplication.multiply (input1,input2);
 
-        Assertions.assertArrayEquals(expected,result);
+        Assertions.assertArrayEquals(expected,result,"computed result must be equal");
 
     }
 

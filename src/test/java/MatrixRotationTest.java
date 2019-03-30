@@ -2,8 +2,13 @@ import com.solo.projectsoloving.matrixrotate.Matrixroration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 
-public class MatrixRotationTest {
+
+public class MatrixRotationTest
+{
 
     private Matrixroration matrixobj = new Matrixroration();
 
@@ -18,6 +23,7 @@ public class MatrixRotationTest {
 
         Assertions.assertArrayEquals(matrixobj.rotate(twotwo),expected);
         System.out.println("completed");
+        Map<String,String> hi = new HashMap<> ();
     }
 
 

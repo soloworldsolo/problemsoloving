@@ -34,7 +34,7 @@ public class Matrixmultiplication {
     }
 
     private int compute(final int[][] first,final int[][] second,final int resultrowindex,final int resultcolumnindex) {
-        int res=0;
+         int res=0;
          int index =0;
          while (index<first[resultrowindex].length )  {
              res += first[resultrowindex][index] * second[index][resultcolumnindex];
