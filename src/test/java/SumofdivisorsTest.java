@@ -15,7 +15,6 @@ public class SumofdivisorsTest {
     }
 
 
-
     @Test
     public void initTest3() {
         int result = sum.ComputeSum (36);
