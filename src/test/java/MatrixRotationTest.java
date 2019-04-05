@@ -1,8 +1,8 @@
 import com.solo.projectsoloving.matrixrotate.Matrixroration;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,9 +10,12 @@ import java.util.Map;
 public class MatrixRotationTest
 {
 
-    private Matrixroration matrixobj = new Matrixroration();
+    private Matrixroration matrixobj;
 
-
+@BeforeEach
+public void init() {
+    matrixobj = new Matrixroration ();
+}
 
 
     @Test
@@ -28,6 +31,7 @@ public class MatrixRotationTest
 
 
     @Test
+    @Tag ("soloworld")
     public void threebythreelArraycheck() {
         int[][] twotwo = {{1,2,3},{4,5,6},{7,8,9}};
 
@@ -37,6 +41,7 @@ public class MatrixRotationTest
     }
 
     @Test
+    @Tag ("soloworld")
     public void fourbyfourlArraycheck() {
         int[][] twotwo = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
 

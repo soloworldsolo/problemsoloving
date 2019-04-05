@@ -1,24 +1,17 @@
 import com.solo.multiplication.Matrixmultiplication;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 public class MatrixmultiplicationTest {
-    Matrixmultiplication matrixmultiplication= new Matrixmultiplication ();
 
-//    @Test
-//    public void twoByTwoCheckingnonsquare() {
-//        int[][] input1 = {{1, 2, 3},
-//                {4, 5, 6}};
-//        int[][] input2 = {{7, 8}, {9, 10}, {11, 12}};
-//        int[][] expected = {{58, 64},
-//                {139, 154}};
-//        var result = matrixmultiplication.multiply (input1, input2);
-//
-//        Assertions.assertArrayEquals (expected, result);
-//    }
+    Matrixmultiplication matrixmultiplication;
+
+    @BeforeEach
+    public void init() {
+        matrixmultiplication = new Matrixmultiplication ();
+    }
 
     @Test
     public void twoByTwoCheckingsquare() {

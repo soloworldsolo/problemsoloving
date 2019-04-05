@@ -1,12 +1,20 @@
 import com.solo.Primenumber;
-import org.junit.Test;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 public class PrimenumberTest {
-    Primenumber pnumber = new Primenumber ();
+    Primenumber pnumber ;
+
+    @BeforeEach
+    public void init() {
+        pnumber = new Primenumber ();
+    }
     @Test
     public void initCheck() {
-        boolean expectedresult = pnumber.isPrime (7);
+        boolean expectedresult = pnumber.isPrime (29);
         Assertions.assertEquals (expectedresult,true);
     }
 
@@ -15,4 +23,6 @@ public class PrimenumberTest {
         boolean expectedresult = pnumber.isPrime (15);
         Assertions.assertEquals (expectedresult,false);
     }
+
+
 }

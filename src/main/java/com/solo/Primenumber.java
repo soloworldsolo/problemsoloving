@@ -10,7 +10,5 @@ public class Primenumber {
             return  true;
 
            return !(number%2==0 || number%3==0);
-
-
     }
 }
