@@ -3,17 +3,20 @@ package com.solo.problemsolving.reverseindexing;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.List;
 
 class reverseIndexingTest {
-
+    @Mock
     ReverseIndexing<Integer> reverseIndexing;
 
     @BeforeEach
     public void init() {
-      reverseIndexing =  new ReverseIndexing<> ();
+        MockitoAnnotations.initMocks (this);
+
     }
 
 
