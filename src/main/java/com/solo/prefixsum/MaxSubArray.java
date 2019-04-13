@@ -8,6 +8,16 @@ public class MaxSubArray {
 
     public int computeMaxSum(int[] inputArray) {
         var input = requireNonNull (inputArray);
-        return  -1;
+        int result = inputArray[0];
+        int currentvalue = inputArray[0];
+        for(int i=1;i< inputArray.length;i++) {
+          currentvalue = Math.max (inputArray[i],currentvalue+inputArray[i]);
+          result  = Math.max (result,currentvalue);
+
+        }
+        return  result;
     }
+
+
+
 }

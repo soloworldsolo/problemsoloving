@@ -9,17 +9,32 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MaxSubArrayTest {
-  @Mock
+
   MaxSubArray maxSubArray;
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.initMocks (this);
+        maxSubArray = new MaxSubArray ();
     }
+
     @Test
     public void baseCase() {
+        int inputArray[] = {2,-1,2,3,4,-5};
+        int maxsum = maxSubArray.computeMaxSum(inputArray);
+        assertEquals (maxsum,10);
+
+    }
+    @Test
+    public void baseCase1() {
         int inputArray[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int maxsum = maxSubArray.computeMaxSum(inputArray);
-        Assertions.assertEquals (maxsum,6);
+        assertEquals (maxsum,6);
 
+    }
+
+    @Test
+    void anotherCase() {
+        int inputarray[] = {2 ,-3, 4, -1, -2, 1,5,-3};
+        int maxSum = maxSubArray.computeMaxSum (inputarray);
+        assertEquals (maxSum,7);
     }
 }
