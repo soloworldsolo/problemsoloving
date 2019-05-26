@@ -16,7 +16,7 @@ class MaxNumberOfvotesTest {
     }
     @Test
     void baseCase() {
-        List<String> ballot = List.of ("solomon","solomon","davidweiss","shanewaston","dohni","dohni","solomon");
+        List<String> ballot = List.of ("asshole", "asshole", "asshole" ,"solomon","solomon","davidweiss","shanewaston","dohni","dohni","solomon");
 
         String winner = maxNumberOfvotes.getResult(ballot);
         Assertions.assertEquals (winner,"solomon");
