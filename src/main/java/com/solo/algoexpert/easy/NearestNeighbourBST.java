@@ -2,31 +2,37 @@ package com.solo.algoexpert.easy;
 
 import java.util.Objects;
 
+import static java.lang.Math.*;
+
 public class NearestNeighbourBST {
     public static int findClosestValueInBst(BST tree, int target) {
         Objects.requireNonNull (tree, "input tree was empty");
         BST cureent = tree;
-        BST previous = null;
-
+        int closestValue = abs (tree.value - target);
+        int result = tree.value;
         while(cureent!= null) {
+
+            if(abs (cureent.value - target) < closestValue) {
+                closestValue = abs(cureent.value - target);
+                result = cureent.value;
+            }
+
             if(cureent.value< target) {
                 if(cureent.right == null)
-                    return  cureent.value;
+                    return  result;
 
-                previous = cureent;
                  cureent = cureent.right;
             }else if(cureent.value > target) {
                 if(cureent.left == null)
-                    return  cureent.value;
+                    return  result;
 
-                previous = cureent;
                 cureent = cureent.left;
-            }else {
-                return previous.value;
             }
+
         }
 
-        return  previous == null?cureent.value : previous.value;
+        return  result;
+
     }
 
     static class BST {
@@ -40,9 +46,38 @@ public class NearestNeighbourBST {
     }
 
     public static void main(String[] args) {
+           BST parent = new BST (10);
+
+           BST parant_left = new BST (3);
+           BST parant_right= new BST (15);
+
+           parent.left = parant_left;
+           parent.right= parant_right;
 
 
-        System.out.println ((Math.abs (10-12)) );
+          BST first_left_left = new BST (2);
+        BST first_left_right = new BST (5);
+
+
+        parant_left.left = first_left_left;
+        parant_left.right = first_left_right;
+
+
+        BST first_right_left = new BST (13);
+        BST first_right_right = new BST (22);
+
+        parant_right.left = first_right_left;
+        parant_right.right = first_right_right;
+
+        BST leveltwo = new BST (1);
+
+        first_left_left.left = leveltwo;
+
+        BST leveltwo_right = new BST (14);
+
+          first_right_left.right = leveltwo_right;
+
+        System.out.println (findClosestValueInBst(parent,12));
 
 
     }
