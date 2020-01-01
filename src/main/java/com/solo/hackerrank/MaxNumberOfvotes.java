@@ -12,7 +12,8 @@ public class MaxNumberOfvotes {
 
         String key = ballot.
                 stream ( ).
-                collect (groupingBy (identity ( ), TreeMap::new, counting ( ))).lastEntry ( ).getKey ( );
+                collect (groupingBy (identity ( ), TreeMap::new, counting ( )))
+                .lastEntry ( ).getKey ( );
 
 
         return  key;
