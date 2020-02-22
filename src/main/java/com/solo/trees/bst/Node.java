@@ -11,4 +11,20 @@ public class Node{
 
     public Node() {
     }
+
+    public Node getLeftnode() {
+        return leftnode;
+    }
+
+    public void setLeftnode(Node leftnode) {
+        this.leftnode = leftnode;
+    }
+
+    public Node getRightnode() {
+        return rightnode;
+    }
+
+    public void setRightnode(Node rightnode) {
+        this.rightnode = rightnode;
+    }
 }
