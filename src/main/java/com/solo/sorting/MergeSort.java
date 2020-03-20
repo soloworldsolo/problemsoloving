@@ -1,11 +1,14 @@
 package com.solo.sorting;
 
-import java.util.List;
-import java.util.Objects;
-
 import static java.util.Objects.requireNonNull;
 
 public class MergeSort {
+
+  public static void main(String[] args) {
+    MergeSort sort = new MergeSort();
+    int[] inputarray = {14, 33, 27, 10, 35, 19, 42, 44};
+    sort.sort(inputarray);
+  }
 
   public int[] sort(int[] iterable) {
     var input = requireNonNull(iterable);
@@ -46,18 +49,11 @@ public class MergeSort {
     }
   }
 
-
   private void swap(int[] input, int firstIndex, int secondIndex) {
     int temp = input[firstIndex];
     int secondValue = input[secondIndex];
     input[secondIndex] = temp;
     input[firstIndex] = secondValue;
 
-  }
-
-  public static void main(String[] args) {
-    MergeSort sort = new MergeSort();
-    int[] inputarray = {14, 33, 27, 10, 35, 19, 42, 44};
-    sort.sort(inputarray);
   }
 }

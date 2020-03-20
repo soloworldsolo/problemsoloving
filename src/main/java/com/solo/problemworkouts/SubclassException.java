@@ -1,7 +1,5 @@
 package com.solo.problemworkouts;
 
-import java.io.IOException;
-
 /*
   sub class overriden method acn throw exception only if super class can throw exception
  */

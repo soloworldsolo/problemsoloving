@@ -1,8 +1,6 @@
 package com.solo.projectsoloving.matrixrotate;
 
-import java.util.HashMap;
 import java.util.Objects;
-import java.util.TreeMap;
 
 public class Matrixroration {
 

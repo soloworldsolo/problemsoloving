@@ -1,10 +1,9 @@
 package com.solo.trees.bst;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
-
-import static java.util.Objects.requireNonNull;
 
 public class LevelOrdertraversal {
 
@@ -17,23 +16,18 @@ public class LevelOrdertraversal {
       if (currentnode.leftnode != null) {
         childstack.add(currentnode.leftnode);
       }
-
       if (currentnode.rightnode != null) {
         childstack.add(currentnode.rightnode);
       }
-
       currentnode = childstack.isEmpty() ? null : childstack.poll();
     }
-
 
   }
 
   public static void main(String[] args) {
     Node parentnode = new Node(1);
-
     Node firstnodeleft = new Node(2);
     Node firstnoderight = new Node(3);
-
     parentnode.leftnode = firstnodeleft;
     parentnode.rightnode = firstnoderight;
 

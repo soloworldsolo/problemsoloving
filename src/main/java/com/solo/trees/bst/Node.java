@@ -1,30 +1,31 @@
 package com.solo.trees.bst;
 
-public class Node{
-    int value;
-    Node leftnode;
-    Node rightnode;
+public class Node {
 
-    public Node(int value) {
-        this.value = value;
-    }
+  int value;
+  Node leftnode;
+  Node rightnode;
 
-    public Node() {
-    }
+  public Node(int value) {
+    this.value = value;
+  }
 
-    public Node getLeftnode() {
-        return leftnode;
-    }
+  public Node() {
+  }
 
-    public void setLeftnode(Node leftnode) {
-        this.leftnode = leftnode;
-    }
+  public Node getLeftnode() {
+    return leftnode;
+  }
 
-    public Node getRightnode() {
-        return rightnode;
-    }
+  public void setLeftnode(Node leftnode) {
+    this.leftnode = leftnode;
+  }
 
-    public void setRightnode(Node rightnode) {
-        this.rightnode = rightnode;
-    }
+  public Node getRightnode() {
+    return rightnode;
+  }
+
+  public void setRightnode(Node rightnode) {
+    this.rightnode = rightnode;
+  }
 }

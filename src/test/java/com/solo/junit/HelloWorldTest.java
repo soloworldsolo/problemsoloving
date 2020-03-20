@@ -4,23 +4,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-
-import static org.junit.jupiter.api.Assertions.*;
-
 public class HelloWorldTest {
-    HelloWorld helloWorld;
 
-    @BeforeEach
-   public void BeforeEach() {
-        helloWorld = new HelloWorld ();
-    }
+  HelloWorld helloWorld;
+  Thread t = new Thread();
 
-    @Test
-    @Tag ("soloworld")
-   public void helloWorld() {
-        String expected = helloWorld.hello ();
-        assertEquals (expected,"HELLOWORLD");
-    }
+  @BeforeEach
+  public void BeforeEach() {
+    helloWorld = new HelloWorld();
+  }
 
-    Thread t = new Thread ();
+  @Test
+  @Tag("soloworld")
+  public void helloWorld() {
+
+  }
 }

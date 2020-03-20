@@ -1,7 +1,6 @@
 package com.solo.multiplication;
 
 import java.util.Objects;
-import java.util.function.BiFunction;
 
 public class Matrixmultiplication {
 
