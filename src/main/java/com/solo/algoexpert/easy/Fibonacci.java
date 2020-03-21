@@ -29,9 +29,8 @@ public class Fibonacci {
   }
 
   /**
-   *
    * calculates the nth fibonacci in o(n) space complexity eliminates the o(n) space in recursion
-   * @param input
+   *
    * @return Integer
    */
   public static Integer calculateFibonacciIteration(Integer input) {
@@ -49,15 +48,5 @@ public class Fibonacci {
     return currentValue;
   }
 
-
 }
 
-class TestFibonacci {
-
-  public static void main(String[] args) {
-    System.out.println(Fibonacci.calculateFibonacciRecursion(9));
-    System.out.println(Fibonacci.calculateFibonacciIteration(9));
-
-  }
-
-}

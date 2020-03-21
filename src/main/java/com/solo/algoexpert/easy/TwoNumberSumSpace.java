@@ -1,18 +1,30 @@
 package com.solo.algoexpert.easy;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 public class TwoNumberSumSpace {
 
   public static void main(String[] args) {
-    int[][] inputarary = {{1, 2, 2}, {3, 3, 9}, {9, 3, 1}};
+    System.out.println(twoNumberSum(new int[]{4,6,1},5));
+  }
 
-    String collect = Arrays.stream(inputarary).
-        flatMapToInt(input -> Arrays.stream(input))
-        .mapToObj(i -> String.valueOf(i)).collect(Collectors.joining(","));
 
-    System.out.println(collect);
+  public static int[] twoNumberSum(int[] input, int sum) {
+    Objects.requireNonNull(input, "input cannot be empty");
+    Arrays.sort(input);
+    int startIndex = 0;
+    int endIndex = input.length - 1;
+    while (startIndex < endIndex) {
+      if (input[startIndex] + input[endIndex] == sum) {
+        return new int[]{input[startIndex], input[endIndex]};
+      } else if (input[startIndex] + input[endIndex] < sum) {
+        startIndex++;
+      } else if (input[startIndex] + input[endIndex] > sum) {
+        endIndex--;
+      }
+    }
+    return new int[0];
   }
 
 }
