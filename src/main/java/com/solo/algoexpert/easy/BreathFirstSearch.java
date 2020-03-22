@@ -42,7 +42,6 @@ public class BreathFirstSearch {
 
     }
 
-
     public Node addChild(String name) {
       Node child = new Node(name);
       children.add(child);
