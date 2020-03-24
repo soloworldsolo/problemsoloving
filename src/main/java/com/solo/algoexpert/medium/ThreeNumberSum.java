@@ -1,5 +1,7 @@
 package com.solo.algoexpert.medium;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,7 +15,36 @@ import java.util.List;
 public class ThreeNumberSum {
 
   public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
-    List<Integer[]> result = null;
+    List<Integer[]> result = new ArrayList<>();
+    Arrays.sort(array);
+
+    for (int i = 0; i < array.length; i++) {
+
+      int startIndex = i + 1;
+      int endIndex = array.length - 1;
+      while (startIndex < endIndex) {
+        int computedSum = array[i] + array[startIndex] + array[endIndex];
+        if (computedSum == targetSum) {
+          result.add(new Integer[]{array[i], array[startIndex], array[endIndex]});
+          startIndex++;
+          endIndex--;
+        } else if (computedSum < targetSum) {
+          startIndex++;
+        } else if (computedSum > targetSum) {
+          endIndex--;
+        }
+      }
+    }
     return result;
   }
+}
+
+class ThreenumberTestr {
+
+  public static void main(String[] args) {
+    List<Integer[]> expected = new ArrayList<Integer[]>();
+    expected.add(new Integer[]{-2, 10, 49});
+    List<Integer[]> output = ThreeNumberSum.threeNumberSum(new int[]{8, 10, -2, 49, 14}, 57);
+  }
+
 }
