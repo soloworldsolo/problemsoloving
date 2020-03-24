@@ -10,8 +10,8 @@ public class PrefixSum {
     int[] result = prefixSum.generatePrefixSum(expected);
   }
 
-  public int[] generatePrefixSum(int[] inputarray) {
-    var input = requireNonNull(inputarray);
+  public int[] generatePrefixSum(int[] inputArray) {
+    var input = requireNonNull(inputArray);
     int[] output = new int[input.length];
     output[0] = input[0];
     for (int i = 1; i < input.length; i++) {
