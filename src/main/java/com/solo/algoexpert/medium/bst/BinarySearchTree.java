@@ -96,11 +96,7 @@ public class BinarySearchTree {
             if (parent != null) {
               parent.left = succesor.right;
             }
-            succesor.left = node.left;
-            succesor.right = node.right;
-            node.left = null;
-            node.right = null;
-            node = null;
+            unLinkSuccessor(node, succesor);
             if (parentNode != null) {
               if (succesor.value > parentNode.value) {
                 parentNode.right = succesor;
@@ -122,11 +118,7 @@ public class BinarySearchTree {
                 if (parent != null) {
                   parent.right = null;
                 }
-                succesor.left = node.left;
-                succesor.right = node.right;
-                node.left = null;
-                node.right = null;
-                node = null;
+                unLinkSuccessor(node, succesor);
               }
             }
 
@@ -145,8 +137,6 @@ public class BinarySearchTree {
             this.left =childNode.left;
             this.right = childNode.right;
           } else {
-            int pvalu =parentNode.value;
-            int chvalu = childNode.value;
               if(childNode.value < parentNode.value) {
                     parentNode.left = childNode;
               }else {
@@ -157,6 +147,14 @@ public class BinarySearchTree {
 
       }
       return this;
+    }
+
+    private void unLinkSuccessor(BST node, BST succesor) {
+      succesor.left = node.left;
+      succesor.right = node.right;
+      node.left = null;
+      node.right = null;
+      node = null;
     }
   }
 }
