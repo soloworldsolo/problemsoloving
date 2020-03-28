@@ -1,7 +1,9 @@
 package com.solo.algoexpert.medium.bst;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -68,7 +70,7 @@ public class BinarySearchTree {
           break;
         }
         parentNode = node;
-         if (value < node.value) {
+        if (value < node.value) {
           node = node.left;
         } else if (value > node.value) {
           node = node.right;
@@ -134,14 +136,14 @@ public class BinarySearchTree {
           }
           if (parentNode == null) {
             this.value = childNode.value;
-            this.left =childNode.left;
+            this.left = childNode.left;
             this.right = childNode.right;
           } else {
-              if(childNode.value < parentNode.value) {
-                    parentNode.left = childNode;
-              }else {
-                parentNode.right = childNode;
-              }
+            if (childNode.value < parentNode.value) {
+              parentNode.left = childNode;
+            } else {
+              parentNode.right = childNode;
+            }
           }
         }
 
@@ -168,7 +170,7 @@ class TestBST {
 
   static {
     test2 = new BinarySearchTree.BST(10).insert(5).
-    insert(15).insert(22).insert(17).insert(34).insert(7).insert(2).
+        insert(15).insert(22).insert(17).insert(34).insert(7).insert(2).
         insert(5).insert(1).insert(35).insert(27).insert(16).insert(30);
     test2.remove(22);
     test2.remove(17)
@@ -188,5 +190,9 @@ class TestBST {
   public static void main(String[] args) {
     List<Integer> output = new ArrayList<>();
     TestBST.inOrderTraverse(test2, output);
+    Map<String,String> map = new HashMap<>();
+    map.put("5","5");
+
+
   }
 }
