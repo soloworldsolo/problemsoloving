@@ -7,6 +7,11 @@ package com.solo.algoexpert.medium;
  */
 public class NoAdjacentElements {
 
+  /**
+   * uses dynamic programming approach to find the maximum sum
+   * @param array
+   * @return int maximum elemnt
+   */
   public static int maxSubsetSumNoAdjacent(int[] array) {
     if (array.length == 0) {
       return 0;
@@ -27,7 +32,14 @@ public class NoAdjacentElements {
 
   }
 
+  /**
+   * returns the maximum value between two integers
+   * @param i
+   * @param i1
+   * @return int
+   */
   private static int maxValue(int i, int i1) {
+    Math.max(i,i1);
     return (i > i1) ? i : i1;
   }
 
@@ -37,7 +49,7 @@ public class NoAdjacentElements {
 class NoAdjacentElemntsTest {
 
   public static void main(String[] args) {
-    int[] value = new int[]{1, 2, 3};
+    int[] value = new int[]{7,10,12,7,9,14};
     NoAdjacentElements.maxSubsetSumNoAdjacent(value);
   }
 }
