@@ -1,7 +1,6 @@
 package com.solo.algoexpert.easy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,13 +16,13 @@ import java.util.Objects;
  */
 public class ProductSum {
 
-  public static int productSum(List<Object> array) {
+  public  int productSum(List<Object> array) {
     Objects.requireNonNull(array, "input cannot be empty");
     return productSumHelper(array, 1);
 
   }
 
-  private static int productSumHelper(List<Object> o, int multipler) {
+  private  int productSumHelper(List<Object> o, int multipler) {
     int sum = 0;
     for (Object sub : o) {
       if (sub instanceof ArrayList) {
@@ -31,27 +30,9 @@ public class ProductSum {
       } else {
         sum += (int) sub;
       }
-    }
+    }  
     return sum * multipler;
   }
 
 }
 
-class ProductSumTest {
-
-  public static void main(String[] args) {
-    List<Object> test =
-        new ArrayList<Object>(
-            Arrays.asList(
-                5,
-                2,
-                new ArrayList<Object>(Arrays.asList(7, -1)),
-                3,
-                new ArrayList<Object>(
-
-                    Arrays.asList(6, new ArrayList<Object>(Arrays.asList(-13, 8)), 4))));
-
-    System.out.println(ProductSum.productSum(test) == 12);
-  }
-
-}

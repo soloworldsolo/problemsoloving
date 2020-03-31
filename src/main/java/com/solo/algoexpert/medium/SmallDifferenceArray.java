@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class SmallDifferenceArray {
 
-  public static int[] smallestDifference(int[] arrayOne, int[] arrayTwo) {
+  public  int[] smallestDifference(int[] arrayOne, int[] arrayTwo) {
     Objects.requireNonNull(arrayOne);
     Objects.requireNonNull(arrayTwo);
     Arrays.sort(arrayOne);
@@ -27,7 +27,6 @@ public class SmallDifferenceArray {
     while ((currentIndexOne < arrayOne.length && (currentIndexTwo < arrayTwo.length))) {
       minIndex1 = arrayOne[currentIndexOne];
       minIndex2 = arrayTwo[currentIndexTwo];
-      minValue = computedIndex;
       if ((minIndex1 < minIndex2)) {
         computedIndex = minIndex2 - minIndex1;
         currentIndexOne++;
@@ -35,7 +34,7 @@ public class SmallDifferenceArray {
         computedIndex = minIndex1 - minIndex2;
         currentIndexTwo++;
       } else {
-        result = new int[]{minIndex1, minIndex2};
+        return new int[]{minIndex1, minIndex2};
       }
       if (minValue > computedIndex) {
         minValue = computedIndex;
@@ -48,12 +47,3 @@ public class SmallDifferenceArray {
 
 }
 
-class TestSmallDifferenceArray {
-
-  public static void main(String[] args) {
-    int[] expected = {20, 17};
-    int[] result=SmallDifferenceArray
-        .smallestDifference(new int[]{-1, 5, 10, 20, 3},
-            new int[]{26, 134, 135, 15, 17});
-  }
-}

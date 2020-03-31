@@ -4,6 +4,9 @@ import static java.lang.Math.abs;
 
 import java.util.Objects;
 
+/**
+ * class to find the nearest neighbour in the BST , it will take a BST
+ */
 public class NearestNeighbourBST {
 
   public static int findClosestValueInBst(BST tree, int target) {
@@ -19,16 +22,8 @@ public class NearestNeighbourBST {
       }
 
       if (cureent.value < target) {
-        if (cureent.right == null) {
-          return result;
-        }
-
         cureent = cureent.right;
       } else if (cureent.value > target) {
-        if (cureent.left == null) {
-          return result;
-        }
-
         cureent = cureent.left;
       }
 
