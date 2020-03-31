@@ -14,42 +14,33 @@ import java.util.Objects;
  */
 public class ThreeLargestNumber {
 
-  public static int[] findThreeLargestNumbers(int[] array) {
+  public int[] findThreeLargestNumbers(int[] array) {
     Objects.requireNonNull(array);
-    int[] result = new int[3];
+    int[] result = {Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
 
-    for (int i = 0; i < array.length; i++) {
-      updateLargest(result, array[i]);
+    for (int i : array) {
+      updateLargest(result, i);
     }
     return result;
   }
 
-  private static void updateLargest(int[] array, int number) {
-    if (number > array[2] || array[2] == 0) {
-      shiftAndUpdate(array, number, 2);
-    } else if (number > array[1] || array[1] == 0) {
-      shiftAndUpdate(array, number, 1);
-    } else if (number > array[1] || array[2] == 0) {
-      shiftAndUpdate(array, number, 0);
+  private void updateLargest(int[] result, int i) {
+    if (i > result[2]) {
+      shiftAndAdd(result, i, 2);
+    } else if (i > result[1]) {
+      shiftAndAdd(result, i, 1);
+    } else if (i > result[0]) {
+      shiftAndAdd(result, i, 0);
     }
   }
 
-  private static void shiftAndUpdate(int[] array, int number, int j) {
-    for (int i = 0; i <= j; i++) {
-      if (i == j) {
-        array[i] = number;
-      } else {
-        array[i] = array[i + 1];
-      }
+  private void shiftAndAdd(int[] result, int number, int index) {
+    for (int i = 0; i < index; i++) {
+      result[i] = result[i + 1];
     }
+    result[index] = number;
   }
+
 
 }
 
-class ThreeNumberTest {
-
-  public static void main(String[] args) {
-    System.out.println(ThreeLargestNumber
-        .findThreeLargestNumbers(new int[]{7, 8, 11, 3, 43, 55}));
-  }
-}
