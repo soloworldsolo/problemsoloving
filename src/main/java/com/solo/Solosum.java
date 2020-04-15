@@ -3,8 +3,7 @@ package com.solo;
 public class Solosum {
 
   public static void main(String[] args) {
-    calculate(5);
-
+  countingValleys(8,"UDDDUDUU");
   }
 
   private static void calculate(int i) {
@@ -14,5 +13,20 @@ public class Solosum {
     while (start < end) {
       System.out.println();
     }
+  }
+
+  static int countingValleys(int n, String s) {
+    char[] steps= s.toCharArray();
+    int currentStep =0;
+    int result =0;
+    for(char step:steps){
+      int stepValue = step=='U'?1:-1;
+      if((currentStep+stepValue) ==0){
+        result++;
+      }
+      currentStep +=stepValue;
+    }
+
+    return result;
   }
 }
