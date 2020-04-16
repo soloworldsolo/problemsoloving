@@ -1,7 +1,6 @@
 package com.solo.algoexpert.medium;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import com.solo.algoexpert.medium.dynamicprogramming.SmallDifferenceArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

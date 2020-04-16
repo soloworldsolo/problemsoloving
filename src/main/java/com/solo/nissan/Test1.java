@@ -3,7 +3,9 @@ package com.solo.nissan;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
 
 /**
  * @author soloworld
@@ -38,6 +40,9 @@ public class Test1 {
 
   public static void main(String[] args) {
     long intList[] = {10L, 1L, 20L, 1L};
-    System.out.println(Test1.minsum_and(intList, 4));
+    Map<String, String> testMAp = new TreeMap<>();
+    testMAp.put("hi", "hello");
+    testMAp.put("wassp", "nigga");
+    testMAp.remove("wassp");
   }
 }

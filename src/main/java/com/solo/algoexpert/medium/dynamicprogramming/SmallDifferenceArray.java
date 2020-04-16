@@ -1,4 +1,4 @@
-package com.solo.algoexpert.medium;
+package com.solo.algoexpert.medium.dynamicprogramming;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -46,4 +46,3 @@ public class SmallDifferenceArray {
   }
 
 }
-
