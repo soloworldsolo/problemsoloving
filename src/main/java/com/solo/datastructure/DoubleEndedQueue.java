@@ -80,17 +80,24 @@ public class DoubleEndedQueue<E> implements Queue<E> {
   }
 
   private int incrementFirstPointer() {
-    firstPointer = (++firstPointer + (MAXIMUM_SIZE + 1)) % (MAXIMUM_SIZE + 1);
+
+    if (++firstPointer > MAXIMUM_SIZE) {
+      firstPointer = 0;
+    }
     return firstPointer;
   }
 
   private int decrementLastPointer() {
-    lastPointer = (--lastPointer + (MAXIMUM_SIZE + 1)) % (MAXIMUM_SIZE + 1);
+    if (--lastPointer < 0) {
+      lastPointer = MAXIMUM_SIZE;
+    }
     return lastPointer;
   }
 
   private int incremnetLastPointer() {
-    lastPointer = (++lastPointer + (MAXIMUM_SIZE + 1)) % (MAXIMUM_SIZE + 1);
+    if (++lastPointer > MAXIMUM_SIZE) {
+      lastPointer = 0;
+    }
     return lastPointer;
   }
 
@@ -99,7 +106,9 @@ public class DoubleEndedQueue<E> implements Queue<E> {
   }
 
   private int decrementFirstPointer() {
-    firstPointer = (--firstPointer + (MAXIMUM_SIZE + 1)) % (MAXIMUM_SIZE + 1);
+    if (--firstPointer < 0) {
+      firstPointer = MAXIMUM_SIZE;
+    }
     return firstPointer;
   }
 }
