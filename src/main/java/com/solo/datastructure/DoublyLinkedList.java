@@ -127,6 +127,7 @@ public class DoublyLinkedList<E> implements Queue<E>, Dequeue<E> {
     Node<E> currentNode = getNode(element);
     if (currentNode != null) {
       if (currentNode == tail) {
+
         tail = currentNode;
       }
       final Node<E> nodeToBeInserted = new Node<>(elementtToBeInserted);
