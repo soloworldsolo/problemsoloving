@@ -28,7 +28,7 @@ public class BubbleSort {
         }
         j++;
       }
-      if(!isSwaped) {
+      if (!isSwaped) {
         return array;
       }
       maximumIndex -= 1;

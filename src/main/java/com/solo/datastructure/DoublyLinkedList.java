@@ -21,7 +21,6 @@ public class DoublyLinkedList<E> implements Queue<E>, Dequeue<E> {
     } else {
       head = elementToInsert;
     }
-
   }
 
   @Override

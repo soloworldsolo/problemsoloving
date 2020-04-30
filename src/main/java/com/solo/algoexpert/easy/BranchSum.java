@@ -16,18 +16,18 @@ import java.util.Stack;
  */
 public class BranchSum {
 
-  public static class BinaryTree {
+   static class BinaryTree {
 
-    int value;
-    BinaryTree left;
-    BinaryTree right;
+     int value;
+     BinaryTree left;
+     BinaryTree right;
 
-    BinaryTree(int value) {
-      this.value = value;
-      this.left = null;
-      this.right = null;
-    }
-  }
+     BinaryTree(int value) {
+       this.value = value;
+       this.left = null;
+       this.right = null;
+     }
+   }
 
 
   /**
