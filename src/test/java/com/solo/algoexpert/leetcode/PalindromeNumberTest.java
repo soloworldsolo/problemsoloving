@@ -17,6 +17,10 @@ class PalindromeNumberTest {
   void failCase() {
     palindromeNumber = new PalindromeNumber();
     Assertions.assertFalse(palindromeNumber.palindromeNumber(157));
+
+    String Solo = "solomon";
+    int index = Solo.indexOf("mon");
+    System.out.println(index);
   }
 
 
