@@ -1,4 +1,5 @@
 import com.solo.Primenumber;
+import java.util.PriorityQueue;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -17,14 +18,14 @@ public class PrimenumberTest {
   @Test
   public void initCheck() {
     boolean expectedresult = pnumber.isPrime(29);
-    Assertions.assertEquals(expectedresult, true);
+    Assertions.assertTrue(expectedresult);
   }
 
   @Test
   @DisplayName("really it will work")
   public void initCheckfifteen() {
     boolean expectedresult = pnumber.isPrime(15);
-    Assertions.assertEquals(expectedresult, false);
+    Assertions.assertFalse(expectedresult);
   }
 
 
@@ -32,6 +33,10 @@ public class PrimenumberTest {
   @DisplayName("really it will throws")
   public void initNull() {
     Assertions.assertThrows(IllegalArgumentException.class, () -> pnumber.isPrime(-1));
+    PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+    priorityQueue.add(5);
+    priorityQueue.add(6);
+    priorityQueue.poll();
   }
 
 

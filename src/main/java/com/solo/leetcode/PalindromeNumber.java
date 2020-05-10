@@ -1,4 +1,4 @@
-package com.solo.algoexpert.leetcode;
+package com.solo.leetcode;
 
 /**
  * Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same

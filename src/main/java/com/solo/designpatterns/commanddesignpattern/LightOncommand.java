@@ -1,5 +1,6 @@
 package com.solo.designpatterns.commanddesignpattern;
 
+
 public class LightOncommand implements Command {
 
   private Light light;
@@ -11,5 +12,6 @@ public class LightOncommand implements Command {
   @Override
   public void execute() {
     light.turnOn();
+
   }
 }

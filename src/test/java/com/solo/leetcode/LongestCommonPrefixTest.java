@@ -1,4 +1,4 @@
-package com.solo.algoexpert.leetcode;
+package com.solo.leetcode;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

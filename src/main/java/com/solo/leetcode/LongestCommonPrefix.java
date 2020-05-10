@@ -1,4 +1,4 @@
-package com.solo.algoexpert.leetcode;
+package com.solo.leetcode;
 
 import static java.util.Objects.requireNonNull;
 

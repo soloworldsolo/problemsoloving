@@ -16,8 +16,10 @@ public class BinaryHeap implements PriorityQueue {
       PriorityQueue.swap(input, index, parentIndex);
       index = parentIndex;
       parentIndex = (index - 1) >>> 1;
+
     }
 
   }
+
 
 }
