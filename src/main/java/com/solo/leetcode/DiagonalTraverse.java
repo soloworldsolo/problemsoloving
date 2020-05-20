@@ -24,11 +24,29 @@ public class DiagonalTraverse {
             reverseRound++;
           }
         }
+
       }
-      if (currentListIndex >= nums.size() - 1) {
-        currentRound++;
+      if (currentRound + 1 == maximumRound) {
+        if (currentListIndex > 0 && nums.get(currentListIndex).size() > currentRound + 1) {
+          currentRound += 1;
+          maximumRound += 1;
+        } else if (currentListIndex > 0
+            && nums.get(currentListIndex - 1).size() > currentRound + 2) {
+          currentRound += 2;
+          maximumRound += 2;
+          currentListIndex--;
+        } else {
+          currentRound++;
+          if (currentListIndex > 0 && nums.get(currentListIndex).size() > currentRound) {
+            maximumRound++;
+          }
+        }
       } else {
-        currentListIndex++;
+        if (currentListIndex >= nums.size() - 1) {
+          currentRound++;
+        } else {
+          currentListIndex++;
+        }
       }
     }
     int[] resultRaary = new int[result.size()];
