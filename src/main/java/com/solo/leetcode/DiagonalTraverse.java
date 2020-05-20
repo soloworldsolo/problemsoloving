@@ -1,60 +1,32 @@
 package com.solo.leetcode;
 
-import java.util.ArrayList;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.List;
+import java.util.TreeMap;
 
 public class DiagonalTraverse {
 
   public int[] findDiagonalOrder(List<List<Integer>> nums) {
-    List<Integer> result = new ArrayList<>();
-    int currentListIndex = 0;
-    int currentRound = 0;
-    int maximumRound = nums.get(nums.size() - 1).size();
-
-    while (currentRound < maximumRound) {
-      result.add(nums.get(currentListIndex).get(currentRound));
-      if (currentListIndex > 0) {
-        int reverseIndex = currentListIndex - 1;
-        int reverseRound = currentRound + 1;
-        while (reverseIndex >= 0) {
-          if (nums.get(reverseIndex).size() > reverseRound) {
-            result.add(nums.get(reverseIndex--).get(reverseRound++));
-          } else {
-            reverseIndex--;
-            reverseRound++;
-          }
-        }
-
-      }
-      if (currentRound + 1 == maximumRound) {
-        if (currentListIndex > 0 && nums.get(currentListIndex).size() > currentRound + 1) {
-          currentRound += 1;
-          maximumRound += 1;
-        } else if (currentListIndex > 0
-            && nums.get(currentListIndex - 1).size() > currentRound + 2) {
-          currentRound += 2;
-          maximumRound += 2;
-          currentListIndex--;
+    var integerListHashMap = new TreeMap<Integer, Deque<Integer>>();
+    for (int i = 0; i < nums.size(); i++) {
+      for (int j = 0; j < nums.get(i).size(); j++) {
+        if (integerListHashMap.containsKey(i + j)) {
+          Deque<Integer> diognalList = integerListHashMap.get(i + j);
+          diognalList.push(nums.get(i).get(j));
         } else {
-          currentRound++;
-          if (currentListIndex > 0 && nums.get(currentListIndex).size() > currentRound) {
-            maximumRound++;
-          }
-        }
-      } else {
-        if (currentListIndex >= nums.size() - 1) {
-          currentRound++;
-        } else {
-          currentListIndex++;
+          Deque<Integer> integerList = new ArrayDeque<>();
+          integerList.push(nums.get(i).get(j));
+          integerListHashMap.put(i + j, integerList);
         }
       }
     }
-    int[] resultRaary = new int[result.size()];
-    int index = 0;
-    for (int res : result) {
-      resultRaary[index++] = res;
-    }
-    return resultRaary;
+
+    return integerListHashMap.entrySet().stream()
+        .flatMap(map -> map.getValue().stream()).mapToInt(Integer::intValue).toArray();
+
   }
 
 }
+
