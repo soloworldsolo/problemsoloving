@@ -8,6 +8,11 @@ import java.util.TreeMap;
 
 public class DiagonalTraverse {
 
+  /**
+   * calculate the sum of index and group them by their diagonal value
+   *
+   * @return array of integer
+   */
   public int[] findDiagonalOrder(List<List<Integer>> nums) {
     var integerListHashMap = new TreeMap<Integer, Deque<Integer>>();
     for (int i = 0; i < nums.size(); i++) {
