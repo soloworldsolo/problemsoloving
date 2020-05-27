@@ -3,28 +3,14 @@ package com.solo.leetcode;
 public class ReverseLinkedList {
 
   public ListNode reverseBetween(ListNode head) {
-    if (head == null) {
-      return null;
+    ListNode result = head;
+    while (head != null && head.next != null) {
+      ListNode resultPrev = result;
+      result = head.next;
+      head.next = result.next;
+      result.next = resultPrev;
     }
-    ListNode currentNode = head;
-    ListNode previousNode = null;
-    while (currentNode.next != null) {
-      ListNode tempPreviousNode = currentNode.next;
-      ListNode tempNextNode = tempPreviousNode.next;
-      tempPreviousNode.next = null;
-      currentNode.next = null;
-      if (previousNode == null) {
-        previousNode = tempPreviousNode;
-        previousNode.next = currentNode;
-      } else {
-        tempPreviousNode.next = previousNode;
-        previousNode = tempPreviousNode;
-
-      }
-      currentNode.next = tempNextNode;
-
-    }
-    return previousNode == null ? head : previousNode;
+    return result;
   }
 
   public static class ListNode {
