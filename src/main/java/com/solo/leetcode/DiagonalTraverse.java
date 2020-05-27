@@ -18,8 +18,7 @@ public class DiagonalTraverse {
     for (int i = 0; i < nums.size(); i++) {
       for (int j = 0; j < nums.get(i).size(); j++) {
         if (integerListHashMap.containsKey(i + j)) {
-          Deque<Integer> diognalList = integerListHashMap.get(i + j);
-          diognalList.push(nums.get(i).get(j));
+          integerListHashMap.get(i + j).push(nums.get(i).get(j));
         } else {
           Deque<Integer> integerList = new ArrayDeque<>();
           integerList.push(nums.get(i).get(j));
