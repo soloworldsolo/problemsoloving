@@ -9,27 +9,23 @@ public class MissingRanges {
     ArrayList<String> result = new ArrayList<>();
 
     long lowerBound = lower;
-    long upperBound = (nums == null || nums.length == 0) ? upper : nums[0];
 
     if (nums == null || nums.length == 0) {
       if (lower == upper) {
         result.add(String.valueOf(lower));
       } else {
-        result.add(lower + "->" + (upperBound));
+        result.add(lower + "->" + (upper));
       }
       return result;
     }
+    long upperBound = nums[0];
 
     for (int i = 0; i <= nums.length; i++) {
       if (upperBound > lowerBound) {
-        if ((lowerBound + 1) == (upperBound)) {
-          result.add(String.valueOf(lowerBound));
-        } else {
-          result.add((lowerBound) + "->" + (upperBound - 1));
-        }
+        printElements(lowerBound, upperBound, result);
       }
       lowerBound = upperBound + 1;
-      if (i < nums.length && i < nums.length - 1) {
+      if (i < nums.length - 1) {
         upperBound = nums[i + 1];
       } else {
         upperBound = (long) upper + 1;
@@ -40,5 +36,14 @@ public class MissingRanges {
     return result;
   }
 
+  private void printElements(long lower, long upper, List<String> result) {
+    StringBuilder builder = new StringBuilder();
+    builder.append(lower);
+    if (upper - 1 > lower) {
+      builder.append("->");
+      builder.append(upper - 1);
+    }
+    result.add(builder.toString());
+  }
 
 }
