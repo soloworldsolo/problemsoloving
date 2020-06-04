@@ -156,6 +156,5 @@ class BSTValidateTest extends ValidateBST.BST {
     test.insert(5).insert(15).insert(5).insert(2).insert(1).insert(22).insert(13).insert(14)
     ;
     //test.left.right.right = new BSTValidateTest(11);
-    System.out.println(ValidateBST.validateBst(test));
   }
 }
