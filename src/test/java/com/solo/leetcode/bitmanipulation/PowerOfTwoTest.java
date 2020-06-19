@@ -15,11 +15,11 @@ class PowerOfTwoTest {
 
   @Test
   void test1() {
-    Assertions.assertTrue(powerOfTwo.isPoweroFTwo(2));
+    Assertions.assertTrue(powerOfTwo.isPowerofTwo(2));
   }
 
   @Test
   void notAPoerOfTwo() {
-    Assertions.assertFalse(powerOfTwo.isPoweroFTwo(7));
+    Assertions.assertFalse(powerOfTwo.isPowerofTwo(7));
   }
 }
