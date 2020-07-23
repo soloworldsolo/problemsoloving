@@ -21,4 +21,14 @@ public class Celebrity {
 
     return celebrity;
   }
+
+  /**
+   * demmy method to avoid  exception
+   * @param celebrity
+   * @param i
+   * @return
+   */
+  private boolean knows(int celebrity, int i) {
+    return celebrity == i;
+  }
 }
