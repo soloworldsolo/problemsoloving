@@ -13,7 +13,7 @@ class DoublyLinkedListTest {
     integerDoublyLinkedList.insertRear(2);
 
     Assertions.assertEquals(1, (int) integerDoublyLinkedList.getFront());
-    Assertions.assertEquals(2, (int) integerDoublyLinkedList.getRear());
+    Assertions.assertEquals(2, (int) integerDoublyLinkedList.getFront());
   }
 
 
@@ -52,7 +52,7 @@ class DoublyLinkedListTest {
     integerDoublyLinkedList.insertRear(2);
     integerDoublyLinkedList.insertRear(4);
     integerDoublyLinkedList.insertRear(5);
-    integerDoublyLinkedList.insertBefore(1, 3);
+    integerDoublyLinkedList.insertBefore(3, 1);
     Assertions.assertEquals(3, (int) integerDoublyLinkedList.getFront());
   }
 
@@ -64,8 +64,10 @@ class DoublyLinkedListTest {
     integerDoublyLinkedList.insertRear(2);
     integerDoublyLinkedList.insertRear(4);
     integerDoublyLinkedList.insertRear(5);
-    integerDoublyLinkedList.insertAfter(2, 3);
+    integerDoublyLinkedList.insertAfter(3, 2);
     Assertions.assertEquals(1, (int) integerDoublyLinkedList.getFront());
+    Assertions.assertEquals(2, (int) integerDoublyLinkedList.getFront());
+    Assertions.assertEquals(3, (int) integerDoublyLinkedList.getFront());
   }
 
   @Test

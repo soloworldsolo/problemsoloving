@@ -14,8 +14,7 @@ public class TopologicalSort {
     boolean[] visited = new boolean[vertices];
     Map<Integer, List<Integer>> adjacencyListMapping = new HashMap<>();
     Deque<Integer> adjacenceyStack = new ArrayDeque<>();
-    for (int i = 0; i < edges.length; i++) {
-      int[] adjacency = edges[i];
+    for (int[] adjacency : edges) {
       adjacencyListMapping.putIfAbsent(adjacency[0], new ArrayList<>());
       adjacencyListMapping.get(adjacency[0]).add(adjacency[1]);
     }
@@ -25,7 +24,14 @@ public class TopologicalSort {
         depthFirstSearch(adjacencyListMapping, visited, adjacenceyStack, i);
       }
     }
+    stackToArary(result, adjacenceyStack);
     return result;
+  }
+
+  private void stackToArary(List<Integer> result, Deque<Integer> adjacenceyStack) {
+    while (!adjacenceyStack.isEmpty()) {
+      result.add(adjacenceyStack.poll());
+    }
   }
 
   private void depthFirstSearch(Map<Integer, List<Integer>> adjacencyListMapping, boolean[] visited,
@@ -33,9 +39,9 @@ public class TopologicalSort {
     visited[input] = true;
     List<Integer> adjacencyList = adjacencyListMapping.get(input);
     if (adjacencyList != null) {
-      for (int i = 0; i < adjacencyList.size(); i++) {
-        if (!visited[adjacencyList.get(i)]) {
-          depthFirstSearch(adjacencyListMapping, visited, stack, adjacencyList.get(i));
+      for (Integer integer : adjacencyList) {
+        if (!visited[integer]) {
+          depthFirstSearch(adjacencyListMapping, visited, stack, integer);
         }
       }
     }

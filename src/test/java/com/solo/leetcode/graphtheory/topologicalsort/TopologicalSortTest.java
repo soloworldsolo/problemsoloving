@@ -19,4 +19,11 @@ class TopologicalSortTest {
     Assertions.assertEquals(List.of(5, 4, 2, 3, 1, 0), topologicalSort
         .topologicalSort(6, new int[][]{{5, 0}, {5, 2}, {4, 0}, {4, 1}, {2, 3}, {3, 1}}));
   }
+
+  @Test
+  void TestCase2() {
+    Assertions.assertEquals(List.of(0, 2, 1, 3, 4, 5), topologicalSort
+        .topologicalSort(6,
+            new int[][]{{0, 1}, {0, 2}, {1, 3}, {1, 4}, {3, 5}, {2, 5}, {2, 3}, {3, 4}}));
+  }
 }
