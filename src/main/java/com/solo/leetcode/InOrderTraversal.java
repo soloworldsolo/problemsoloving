@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class InOrderTraversal {
+public class
+InOrderTraversal {
 
   public List<Integer> inorderTraversal(TreeNode root) {
     List<Integer> inOrder = new ArrayList<>();
@@ -24,13 +25,19 @@ public class InOrderTraversal {
     TreeNode currentNode = root;
 
     while (currentNode != null || !nodeSatck.isEmpty()) {
-      while (currentNode == null) {
-        nodeSatck.push(currentNode);
-        currentNode = currentNode.left;
+      if (currentNode.right != null) {
+        nodeSatck.push(currentNode.right);
       }
-      currentNode = nodeSatck.pop();
-      inOrder.add(currentNode.val);
-      currentNode = currentNode.right;
+      nodeSatck.push(currentNode);
+      currentNode = currentNode.left;
+
+      if (!nodeSatck.isEmpty() && currentNode.right == nodeSatck.peek()) {
+        nodeSatck.push(currentNode);
+        currentNode = currentNode.right;
+      } else {
+        inOrder.add(currentNode.val);
+        currentNode = null;
+      }
     }
 
     return inOrder;

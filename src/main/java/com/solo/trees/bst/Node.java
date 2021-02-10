@@ -28,4 +28,9 @@ public class Node {
   public void setRightnode(Node rightnode) {
     this.rightnode = rightnode;
   }
+
+
+  public int getValue() {
+    return value;
+  }
 }

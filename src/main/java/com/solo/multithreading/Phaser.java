@@ -51,7 +51,7 @@ public class Phaser {
   public double[] runParallelBarrierExecutor(final double[] input
   ) throws InterruptedException {
     var ph = new java.util.concurrent.Phaser(3);
-    ExecutorService executor = Executors.newFixedThreadPool(3);
+    ExecutorService executor = Executors.newFixedThreadPool(8);
     Thread t1 = new Thread(new Task(1, 2, ph, input));
     Thread t2 = new Thread(new Task(3, 5, ph, input));
     Thread t3 = new Thread(new Task(6, 9, ph, input));
@@ -59,7 +59,7 @@ public class Phaser {
     executor.execute(t2);
     executor.execute(t3);
     executor.shutdown();
-    executor.awaitTermination(300, TimeUnit.MILLISECONDS);
+    executor.awaitTermination(5, TimeUnit.SECONDS);
     return input;
   }
 

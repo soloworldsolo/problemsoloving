@@ -18,6 +18,11 @@ class PascalsTriangleTest {
   @Test
   public void testFiveByFive() {
 
+    int i = 1;
+
+    i &= 5;
+    System.out.println("result" + i);
+
     var input = new int[5][5];
     input[0][0] = 1;
 

@@ -38,7 +38,15 @@
   </dependencies>
   <groupId>groupId</groupId>
   <modelVersion>4.0.0</modelVersion>
-
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>2.22.2</version>
+      </plugin>
+    </plugins>
+  </build>
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>

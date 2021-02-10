@@ -12,7 +12,7 @@ public class MajorityInArary {
       if (count == 0) {
         majority = x;
       }
-      count += x == majority ? 1 : -1;
+      count += (x == majority ? 1 : -1);
     }
     return majority;
   }

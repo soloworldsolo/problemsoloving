@@ -61,8 +61,8 @@ public class CourseSchedule2 {
     boolean cycl = false;
     List<Integer> dependencyMap = preRequistMap.get(courseId);
     if (nonNull(dependencyMap) && !dependencyMap.isEmpty()) {
-      for (Integer integer : dependencyMap) {
-        if (calculateOrder(result, preRequistMap, visited, cycle, integer)) {
+      for (Integer courseID : dependencyMap) {
+        if (calculateOrder(result, preRequistMap, visited, cycle, courseID)) {
           cycl = true;
           break;
         }

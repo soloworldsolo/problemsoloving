@@ -23,7 +23,7 @@ public class LongestPeak {
       }
       startIndex++;
     }
-    return maximumPeak;
+    return maximumPeak == Integer.MIN_VALUE ? 0 : maximumPeak;
   }
 
   private int getLeftSequence(int[] array, int index) {
