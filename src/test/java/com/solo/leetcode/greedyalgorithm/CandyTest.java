@@ -5,22 +5,24 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PatchingArrayTest {
+class CandyTest {
 
-    PatchingArray patchingArray;
+    Candy candy;
 
     @BeforeEach
     void setUp() {
-        patchingArray = new PatchingArray();
+        candy = new Candy();
     }
 
     @Test
     void test1() {
-        assertEquals(1, patchingArray.patch(new int[]{1, 3}, 6));
+        var input = new int[]{1, 0, 2};
+        assertEquals(5, candy.candyDistribution(input));
     }
 
     @Test
     void test2() {
-        assertEquals(2, patchingArray.patch(new int[]{1, 2, 4, 13, 43}, 100));
+        var input = new int[]{1, 2, 2};
+        assertEquals(4, candy.candyDistribution(input));
     }
 }

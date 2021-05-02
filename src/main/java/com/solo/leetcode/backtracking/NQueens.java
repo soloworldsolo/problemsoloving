@@ -86,27 +86,19 @@ public class NQueens {
 
   private boolean validPosition(int column, int columnIndex, int[] current) {
 
-    int currentIndex = column;
-    int currentRowPosition = columnIndex;
-    int index = 1;
-    while (currentIndex - index >= 0 || currentIndex + index < current.length) {
-      if (currentIndex - index >= 0 && currentRowPosition == current[currentIndex - index]) {
-        return false;
+      int currentIndex = column;
+      int currentRowPosition = columnIndex;
+      int index = 1;
+      while (currentIndex - index >= 0) {
+          if (currentRowPosition == current[currentIndex - index]
+                  || currentRowPosition - index == current[currentIndex
+                  - index] || currentRowPosition + index == current[currentIndex
+                  - index]) {
+              return false;
+          }
+          index++;
       }
-      if (currentIndex - index >= 0 && currentRowPosition - index == current[currentIndex
-          - index]) {
-        return false;
-      }
-      if (currentIndex - index >= 0 && currentIndex - index < current.length
-          && currentRowPosition + index < current.length
-          && currentRowPosition + index == current[currentIndex
-          - index]) {
-        return false;
-      }
-      index++;
-
-    }
-    return true;
+      return true;
   }
 
 }

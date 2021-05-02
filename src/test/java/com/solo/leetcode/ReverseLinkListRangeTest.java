@@ -27,7 +27,7 @@ class ReverseLinkListRangeTest {
     Assertions.assertEquals(4, result.next.val);
     Assertions.assertEquals(3, result.next.next.val);
     Assertions.assertEquals(2, result.next.next.next.val);
-    Assertions.assertEquals(1, result.next.next.next.next.val);
+      Assertions.assertEquals(5, result.next.next.next.next.val);
 
     ListNode next = result.next;
 

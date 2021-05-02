@@ -23,7 +23,7 @@ class MaximumDepthBinaryTreeTest {
     headNode.right.left = new TreeNode(15);
     headNode.right.right = new TreeNode(7);
 
-    Assertions.assertEquals(2, maximumDepthBinaryTree.minDepth(headNode));
+    Assertions.assertEquals(4, maximumDepthBinaryTree.minDepth(headNode));
   }
 
   @Test
@@ -44,7 +44,7 @@ class MaximumDepthBinaryTreeTest {
     headNode.left = new TreeNode(2);
 
     headNode.left.left = new TreeNode(4);
-    headNode.left.left.left = new TreeNode(5);
-    Assertions.assertEquals(2, maximumDepthBinaryTree.minDepth(headNode));
+      headNode.left.left.left = new TreeNode(5);
+      Assertions.assertEquals(4, maximumDepthBinaryTree.minDepth(headNode));
   }
 }

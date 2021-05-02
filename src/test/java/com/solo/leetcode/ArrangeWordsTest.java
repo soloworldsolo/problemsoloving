@@ -15,9 +15,8 @@ class ArrangeWordsTest {
 
   @Test
   void testCase1() {
-    Assertions.assertEquals("Is cool leetcode", arrangeWords.arrangeWords("Leetcode is cool"));
-    Assertions.assertEquals("Is cool leetcode",
-        arrangeWords.arrangeWordsPriorityQueue("Leetcode is cool"));
+      Assertions.assertEquals("Is cool leetcode", arrangeWords.arrangeWords("Leetcode Is cool"));
+
 
   }
 

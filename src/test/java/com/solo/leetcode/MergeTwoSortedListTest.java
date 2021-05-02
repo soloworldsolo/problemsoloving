@@ -49,6 +49,6 @@ class MergeTwoSortedListTest {
     listNode22.next = listNode23;
 
     var result = mergeTwoSortedList.mergeTwoSortedList(listNode, listNode21);
-    Assertions.assertEquals(0, result.val);
+    Assertions.assertEquals(1, result.val);
   }
 }
