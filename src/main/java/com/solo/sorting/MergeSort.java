@@ -12,41 +12,53 @@ public class MergeSort {
 
   public int[] sort(int[] iterable) {
     var input = requireNonNull(iterable);
-    int middle = input.length / 2;
-    split(input, 0, middle - 1);
-    split(input, middle, input.length - 1);
-    merge(input, 0, middle, input.length - 1);
+    int[] des = new int[input.length];
+
+    split(input, 0, input.length - 1);
     return iterable;
   }
 
   private void split(int[] input, int startIndex, int endIndex) {
-    int totallength = endIndex + 1 - startIndex;
-    int middle = startIndex + (totallength / 2);
-
-    if (startIndex == endIndex || middle <= startIndex) {
-      return;
+    if (startIndex < endIndex) {
+      int middle = startIndex + (endIndex - startIndex) / 2;
+      split(input, startIndex, middle);
+      split(input, middle + 1, endIndex);
+      merge(input, startIndex, middle, endIndex);
     }
-
-    split(input, startIndex, middle - 1);
-    split(input, middle, endIndex);
-    merge(input, startIndex, middle, endIndex);
 
 
   }
 
   private void merge(int[] input, int startIndex, int middleIndex, int endIndex) {
-    for (int i = startIndex; i <= endIndex; i++) {
-      int j = i;
-      int middle = i + ((endIndex + 1 - startIndex) / 2);
-      while (j < middle && middle <= endIndex) {
-        if (input[j] > input[middle]) {
-          swap(input, j++, middle);
-        } else {
-          j++;
-        }
+    int numOfelements = (endIndex - startIndex) + 1;
+    int middle = startIndex + (endIndex - startIndex) / 2;
+
+    int[] destination = new int[numOfelements];
+    System.arraycopy(input, startIndex, destination, 0, numOfelements);
+    int i = 0;
+    int j = middle;
+    int k = startIndex;
+
+    while (i <= middle && j < endIndex) {
+      if (destination[i] < destination[j]) {
+        input[k++] = destination[i++];
+      } else {
+        input[k++] = destination[j++];
       }
+    }
+
+    while (i <= middle) {
+
+      input[k++] = destination[i++];
 
     }
+
+    while (j < numOfelements) {
+
+      input[k++] = destination[j++];
+
+    }
+
   }
 
   private void swap(int[] input, int firstIndex, int secondIndex) {

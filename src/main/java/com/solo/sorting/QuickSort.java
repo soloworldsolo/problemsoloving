@@ -1,5 +1,7 @@
 package com.solo.sorting;
 
+import java.util.Random;
+
 /**
  * implementaion of quick sort
  * <p>
@@ -17,7 +19,50 @@ public class QuickSort implements Sorting {
 
 
   @Override
-  public void sort(int[] iterable) {
+  public void sort(int[] elements) {
+
+    QuickSortHelper(elements, 0, elements.length - 1);
+  }
+
+  private void QuickSortHelper(int[] iterable, int start, int end) {
+    if (start < end) {
+      int n = reorder(iterable, start, end);
+      QuickSortHelper(iterable, start, n);
+      QuickSortHelper(iterable, n + 1, end);
+    }
 
   }
+
+  private int reorder(int[] iterable, int start, int end) {
+    Random random = new Random();
+    int pivot = start + random.nextInt(end - start + 1);
+    int pivotVal = iterable[pivot];
+    int i = start;
+    int j = end;
+    while (i < j) {
+      if (iterable[i] < pivotVal) {
+        i++;
+      }
+
+      if (iterable[j] > pivotVal) {
+        j--;
+      }
+      if (iterable[i] > iterable[j]) {
+        swap(iterable, i, j);
+      }
+    }
+    if (iterable[i] > iterable[j]) {
+      swap(iterable, i, j);
+    }
+    return j;
+  }
+
+  private void swap(int[] iterable, int i, int j) {
+    int temp = iterable[j];
+    iterable[j] = iterable[i];
+    iterable[i] = temp;
+
+  }
+
+
 }
