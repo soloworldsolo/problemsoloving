@@ -19,5 +19,6 @@ class SeieveOfEratosthenesTest {
   void test1() {
     assertTrue(seieveOfEratosthenes.isPrime(13));
     assertFalse(seieveOfEratosthenes.isPrime(14));
+    assertFalse(seieveOfEratosthenes.isPrime(15));
   }
 }

@@ -18,7 +18,7 @@ public class SeieveOfEratosthenes {
     for (int i = 3; i < n; i += 2) {
       if (nonPrimeSet[i] == 1) {
         for (int j = i * i; j <= n; j += i) {
-          nonPrimeSet[i] = 0;
+          nonPrimeSet[j] = 0;
         }
       }
 
