@@ -19,4 +19,9 @@ class PrimeFactorsTest {
   void test1() {
     assertEquals(List.of(2, 3), primeFactors.findfactors(12));
   }
+
+  @Test
+  void test2() {
+    assertEquals(List.of(2, 3), primeFactors.findfactors(6));
+  }
 }

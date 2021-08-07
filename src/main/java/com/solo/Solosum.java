@@ -11,7 +11,7 @@ public class Solosum {
     int end = i - 1;
 
     while (start < end) {
-      System.out.println();
+      Math.pow(1,5);
     }
   }
 

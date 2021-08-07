@@ -19,6 +19,13 @@ public class PrimeFactors {
     while (prime * prime < num) {
       if (num % prime == 0) {
         result.add(prime);
+        while (num%prime ==0) {
+          num = num/prime;
+        }
+      }
+
+      if (num >1) {
+        result.add(num);
       }
 
       prime = primenumbers.get(++i);
@@ -26,7 +33,7 @@ public class PrimeFactors {
     return result;
   }
 
-  private List<Integer> getPrimeNumbers(int num) {
+  public List<Integer> getPrimeNumbers(int num) {
     int[] numbers = new int[num + 1];
     numbers[0] = 0;
     numbers[1] = 0;
