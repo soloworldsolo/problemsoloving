@@ -23,41 +23,42 @@ public class MergeSort {
       int middle = startIndex + (endIndex - startIndex) / 2;
       split(input, startIndex, middle);
       split(input, middle + 1, endIndex);
-      merge(input, startIndex, middle, endIndex);
+      merge(input, startIndex ,endIndex);
     }
 
 
   }
 
-  private void merge(int[] input, int startIndex, int middleIndex, int endIndex) {
-    int numOfelements = (endIndex - startIndex) + 1;
-    int middle = startIndex + (endIndex - startIndex) / 2;
-
-    int[] destination = new int[numOfelements];
-    System.arraycopy(input, startIndex, destination, 0, numOfelements);
+  private void merge(int[] input, int startIndex, int endIndex) {
+    int total = (endIndex - startIndex) + 1;
+    int[] auxillary = new int[total];
     int i = 0;
-    int j = middle;
-    int k = startIndex;
+    int start = startIndex;
+    int middle = (start + (endIndex - startIndex) / 2) + 1;
+    int end = middle;
+    while (i < auxillary.length) {
+      if (start < middle &&  end <= endIndex) {
+        if (input[start] < input[end]) {
+          auxillary[i++] = input[start++];
 
-    while (i <= middle && j < endIndex) {
-      if (destination[i] < destination[j]) {
-        input[k++] = destination[i++];
-      } else {
-        input[k++] = destination[j++];
+        } else {
+          auxillary[i++] = input[end++];
+        }
+      } else if (start >= middle && end <= endIndex && i < auxillary.length) {
+        auxillary[i++] = input[end++];
+      } else if (end >= endIndex && start < middle && i < auxillary.length) {
+        auxillary[i++] = input[start++];
       }
     }
 
-    while (i <= middle) {
 
-      input[k++] = destination[i++];
-
+    int j = 0;
+    int startPosition = startIndex;
+    while (j < auxillary.length) {
+      input[startPosition++] = auxillary[j++];
     }
 
-    while (j < numOfelements) {
 
-      input[k++] = destination[j++];
-
-    }
 
   }
 
