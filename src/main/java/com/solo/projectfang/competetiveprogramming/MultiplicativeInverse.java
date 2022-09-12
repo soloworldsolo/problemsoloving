@@ -17,7 +17,7 @@ public class MultiplicativeInverse {
         return -1;
     }
 
-    private int gcd(int a, int b, AtomicInteger x, AtomicInteger y) {
+     int gcd(int a, int b, AtomicInteger x, AtomicInteger y) {
         if (b == 0) {
             x.set(1);
             y.set(0);

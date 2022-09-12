@@ -8,14 +8,14 @@ import java.util.stream.IntStream;
 
 public class PrimeFactors {
 
-    public List<Integer> findfactors(int num) {
-        List<Integer> primenumbers = getPrimeNumbers(num);
-        if (primenumbers.isEmpty()) {
+    public List<Integer> findFactors(int num) {
+        List<Integer> primeNumbers = getPrimeNumbers(num);
+        if (primeNumbers.isEmpty()) {
             return Collections.emptyList();
         }
         List<Integer> result = new ArrayList<>();
         int i = 0;
-        int prime = primenumbers.get(i);
+        int prime = primeNumbers.get(i);
         while (prime * prime < num) {
             if (num % prime == 0) {
                 result.add(prime);
@@ -23,7 +23,7 @@ public class PrimeFactors {
                     num = num / prime;
                 }
             }
-            prime = primenumbers.get(++i);
+            prime = primeNumbers.get(++i);
         }
         if (num > 1) {
             result.add(num);

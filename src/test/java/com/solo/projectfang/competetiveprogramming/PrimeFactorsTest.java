@@ -17,12 +17,12 @@ class PrimeFactorsTest {
 
   @Test
   void test1() {
-    assertEquals(List.of(2, 3), primeFactors.findfactors(12));
+    assertEquals(List.of(2, 3), primeFactors.findFactors(12));
   }
 
   @Test
   void test2() {
-    assertEquals(List.of(2, 3), primeFactors.findfactors(6));
-    assertEquals(List.of( 3,5), primeFactors.findfactors(15));
+    assertEquals(List.of(2, 3), primeFactors.findFactors(6));
+    assertEquals(List.of( 3,5), primeFactors.findFactors(15));
   }
 }

@@ -29,7 +29,7 @@ import java.util.List;
 public class EulerPhi {
     public int findToitent(int i) {
 
-        List<Integer> primeafctors = new PrimeFactors().findfactors(i);
+        List<Integer> primeafctors = new PrimeFactors().findFactors(i);
         float result = i;
         if (!primeafctors.isEmpty()) {
             for (Integer primes : primeafctors) {
