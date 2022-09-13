@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.solo.leetcode.divideandconquer.ConstructTreeTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.solo.leetcode.divideandconquer.ConstructTreeTest
+testTree  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.solo.util.TreeNode.getVal()" because the return value of "com.solo.util.TreeNode.getLeft()" is null
+	at com.solo.leetcode.divideandconquer.ConstructTreeTest.testTree(ConstructTreeTest.java:24)
+

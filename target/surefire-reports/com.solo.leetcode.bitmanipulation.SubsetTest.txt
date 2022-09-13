@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.solo.leetcode.bitmanipulation.SubsetTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.solo.leetcode.bitmanipulation.SubsetTest
+name  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[[3], [1], [2], [1, 2, 3], [1, 2], [1, 3], [2, 3], []]> but was: <[[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]>
+	at com.solo.leetcode.bitmanipulation.SubsetTest.name(SubsetTest.java:19)
+

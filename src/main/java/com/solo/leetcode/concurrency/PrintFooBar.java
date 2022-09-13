@@ -1,6 +1,7 @@
 package com.solo.leetcode.concurrency;
 
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -8,45 +9,56 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class PrintFooBar {
     private int n;
+    private AtomicBoolean lock = new AtomicBoolean(false);
+    private ReentrantLock objLock;
+    private Condition fooCondn, barCondn;
 
-    private AtomicBoolean lock ;
 
     public PrintFooBar(int n) {
         this.n = n;
-    } public PrintFooBar(int n, AtomicBoolean lock) {
+
+    }
+
+    public PrintFooBar(int n, AtomicBoolean lock) {
         this.n = n;
         this.lock = lock;
+        this.objLock = new ReentrantLock();
+        this.fooCondn = objLock.newCondition();
+        this.barCondn = objLock.newCondition();
     }
 
     public void foo(Runnable printFoo) throws InterruptedException {
 
-
-        synchronized (this) {
-            for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
+            try {
+                objLock.lock();
                 while (lock.get()) {
-                    wait();
+                    fooCondn.await();
                 }
                 printFoo.run();
                 lock.set(true);
-                notifyAll();
-
+                barCondn.signal();
+            } finally {
+                objLock.unlock();
             }
-
         }
+
     }
 
     public void bar(Runnable printBar) throws InterruptedException {
 
-        synchronized (this) {
-            for (int i = 0; i < n; i++) {
-
+        for (int i = 0; i < n; i++) {
+            try {
+                objLock.lock();
                 while (!lock.get()) {
-                    wait();
+                    barCondn.await();
                 }
+
                 printBar.run();
                 lock.set(false);
-
-                notifyAll();
+                fooCondn.signal();
+            } finally {
+                objLock.unlock();
             }
         }
     }
