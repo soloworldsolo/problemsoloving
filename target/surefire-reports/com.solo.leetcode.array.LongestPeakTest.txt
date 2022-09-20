@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.solo.leetcode.array.LongestPeakTest
--------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.solo.leetcode.array.LongestPeakTest

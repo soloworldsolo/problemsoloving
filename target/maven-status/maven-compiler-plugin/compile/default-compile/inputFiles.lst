@@ -79,6 +79,7 @@
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/binaryserach/KthSmallestElement.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/graphtheory/CloningGraph.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/graphtheory/Celebrity.java
+/Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/array/ReplaceWithLargestElement.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/projectfang/competetiveprogramming/EulerPhi.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/graphtheory/TarjansArticulationPoint.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/projectfang/competetiveprogramming/MultiplicativeInverse.java
@@ -88,6 +89,7 @@
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/bitmanipulation/Subset.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/projectfang/competetiveprogramming/PrimeFactors.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/dynamicprogramming/MinimumCoinChange.java
+/Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/concurrency/PrintZeroEvenOdd.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/projectfang/competetiveprogramming/divideandconquer/FirstLastArray.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/datastructure/heap/BinaryHeap.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/InOrderTraversal.java
@@ -156,6 +158,7 @@
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/interview/Question.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/algoexpert/easy/ProductSum.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/trees/bst/LevelOrdertraversal.java
+/Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/array/prefixsum/MinimumSubArray.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/projectfang/competetiveprogramming/backtracking/Multiplication.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/algoexpert/medium/MoveElementToEnd.java
 /Users/hokage/Documents/hokwork/problemsoloving/src/main/java/com/solo/leetcode/BinaryTree.java

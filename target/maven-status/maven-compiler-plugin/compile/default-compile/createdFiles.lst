@@ -114,6 +114,7 @@ com/solo/leetcode/ArrangeWords.class
 com/solo/algoexpert/easy/InsertionSort.class
 com/solo/nissan/PascalsTriangle.class
 com/solo/hackerrank/ReverseLinkList.class
+com/solo/leetcode/concurrency/PrintZeroEvenOdd.class
 com/solo/datastructure/DoublyLinkedList.class
 com/solo/leetcode/graphtheory/traversal/DepthFirstSearch.class
 com/solo/leetcode/graphtheory/FloweringPlant.class
@@ -187,6 +188,7 @@ com/solo/algoexpert/medium/LongestPeak.class
 com/solo/leetcode/greedyalgorithm/RemoveDuplicateLetters.class
 com/solo/leetcode/SymmetricTree.class
 com/solo/leetcode/backtracking/NQueens.class
+com/solo/leetcode/array/ReplaceWithLargestElement.class
 com/solo/leetcode/ReverseLinkedList.class
 com/solo/projectfang/competetiveprogramming/PrimeFactors.class
 com/solo/leetcode/graphtheory/CloningGraph.class
@@ -220,6 +222,7 @@ com/solo/graphtheory/DijikstraShortestPath.class
 com/solo/trees/bst/LevelOrdertraversal.class
 com/solo/leetcode/graphtheory/AlienDictionary.class
 com/solo/multithreading/Phaser.class
+com/solo/leetcode/array/prefixsum/MinimumSubArray.class
 com/solo/graphtheory/FloydWarshall.class
 com/solo/projectfang/competetiveprogramming/SeieveOfEratosthenes.class
 com/solo/leetcode/concurrency/PrintFooBar.class
