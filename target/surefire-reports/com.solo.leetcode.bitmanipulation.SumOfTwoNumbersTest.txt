@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.solo.leetcode.bitmanipulation.SumOfTwoNumbersTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.solo.leetcode.bitmanipulation.SumOfTwoNumbersTest
+minusTwoPlusThree  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at com.solo.leetcode.bitmanipulation.SumOfTwoNumbersTest.minusTwoPlusThree(SumOfTwoNumbersTest.java:23)
+
+fourPlusThree  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <7> but was: <0>
+	at com.solo.leetcode.bitmanipulation.SumOfTwoNumbersTest.fourPlusThree(SumOfTwoNumbersTest.java:18)
+

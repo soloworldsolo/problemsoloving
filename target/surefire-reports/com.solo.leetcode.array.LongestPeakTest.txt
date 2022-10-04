@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.solo.leetcode.array.LongestPeakTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.solo.leetcode.array.LongestPeakTest
+testcase2  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <5>
+	at com.solo.leetcode.array.LongestPeakTest.testcase2(LongestPeakTest.java:27)
+

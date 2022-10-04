@@ -14,23 +14,14 @@ import java.util.Deque;
 public class LongestPeak {
 
   public int findPeakElement(int[] nums) {
-    Deque<Integer> resultQueue = new ArrayDeque<>();
-    for (int i = 1; i < nums.length; i++) {
-      boolean peak = false;
-      if (nums[i] > nums[i - 1]) {
-        peak = true;
-      }
-      if (peak && (i + 1 <= nums.length - 1)) {
-        peak = ((nums[i] > nums[i + 1]));
 
-      }
-      if (peak) {
-        resultQueue.push(i);
+    for(int i=0;i< nums.length-1;i++) {
+      if(nums[i] > nums[i+1]) {
+        return  i;
       }
     }
 
-    return resultQueue.isEmpty() ? 0 : resultQueue.pop();
-
+   return  nums.length -1;
   }
 
   public int binarySearchSolution(int[] nums) {
